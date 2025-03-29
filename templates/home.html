@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Insurance Cost Prediction</title>
+    <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='style.css') }}"
+    />
+</head>
+<body>
+<div class="container">
+    <div class="left-section">
+        <h1>
+            Medical Insurance <br />
+            Cost Prediction
+        </h1>
+        <form id="insuranceForm" action="/predict" method="post">
+            <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    placeholder="Enter your Age"
+                    required
+            />
+            <select id="sex" name="sex" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+            </select>
+            <input
+                    type="number"
+                    id="bmi"
+                    name="bmi"
+                    placeholder="BMI (enter in whole numbers)"
+                    required
+            />
+            <input
+                    type="number"
+                    id="children"
+                    name="children"
+                    placeholder="How many children do you have?"
+                    required
+            />
+            <select id="smoker" name="smoker" required>
+                <option value="" disabled selected>Do you Smoke?</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <select id="region" name="region" required>
+                <option value="" disabled selected>
+                    Which Region are you from?
+                </option>
+                <option value="0">Northwest</option>
+                <option value="1">Northeast</option>
+                <option value="2">Southwest</option>
+                <option value="3">Southeast</option>
+            </select>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+    <div class="right-section">
+        <img
+                src="{{ url_for('static', filename='Medicalinsurance-image.png') }}"
+                alt="Insurance Illustration"
+        />
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("insuranceForm");
+    const ageInput = document.getElementById("age");
+    const bmiInput = document.getElementById("bmi");
+
+    // Validate age (18-90)
+    ageInput.addEventListener("input", () => {
+      if (ageInput.value < 18) {
+        ageInput.setCustomValidity("Age must be at least 18.");
+      } else if (ageInput.value > 90) {
+        ageInput.setCustomValidity("Age must not exceed 90.");
+      } else {
+        ageInput.setCustomValidity("");
+      }
+    });
+
+    // Restrict BMI to whole numbers
+    bmiInput.addEventListener("input", () => {
+      if (!Number.isInteger(parseFloat(bmiInput.value))) {
+        bmiInput.setCustomValidity("BMI must be a whole number.");
+      } else {
+        bmiInput.setCustomValidity("");
+      }
+    });
+
+    // Prevent form submission if validations fail
+    form.addEventListener("submit", (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        alert("Please correct the highlighted fields before submitting.");
+      }
+    });
+</script>
+</body>
+</html>

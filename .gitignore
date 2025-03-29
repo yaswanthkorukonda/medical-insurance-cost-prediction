@@ -1,0 +1,36 @@
+# Python files
+*.py[cod]
+__pycache__/
+*.pyd
+
+# Virtual environment
+venv/
+env/
+*.egg
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Flask files
+instance/
+*.log
+
+# Data files
+data/
+*.csv
+*.pkl
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff0000, #ffcccc);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    text-align: left;
+}
+
+.left-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+input, select {
+    padding: 15px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Button */
+button {
+    width: 150px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+button:hover {
+    background-color: #cc0000;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    text-align: right;
+}
+
+.right-section img {
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .right-section {
+        order: 1; /* Move the image above the form */
+        margin-bottom: 20px;
+    }
+
+    .form-section {
+        order: 2;
+        width: 100%;
+    }
+
+    img {
+        max-width: 200px; /* Resize image for mobile */
+        height: auto;
+    }
+}
+
