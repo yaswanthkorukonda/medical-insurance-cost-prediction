@@ -1,7 +1,7 @@
 
 # Medical Insurance Charge Prediction: A Random Forest Regressor Model
 
-his project aims to develop a web application that predicts insurance costs based on various demographic and health-related factors. We've built a machine learning model using Random Forest and integrated it into a Flask web application.
+This project aims to develop a web application that predicts insurance costs based on various demographic and health-related factors. We've built a machine learning model using Random Forest and integrated it into a Flask web application.
 
 [![Made by Yaswanth Korukonda](https://img.shields.io/badge/Work%20by-Yaswanth%20Korukonda-red)](https://github.com/yaswanthkorukonda)
 
