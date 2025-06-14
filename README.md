@@ -3,6 +3,8 @@
 
 This project aims to develop a web application that predicts insurance costs based on various demographic and health-related factors. We've built a machine learning model using Random Forest and integrated it into a Flask web application.
 
+### [PPT](<./Viva PPT - Medical Insurance Charge Prediction.pptx>) 🎬
+
 [![Made by Yaswanth Korukonda](https://img.shields.io/badge/Work%20by-Yaswanth%20Korukonda-red)](https://github.com/yaswanthkorukonda)
 
 ## Features 🎯
